@@ -4,4 +4,4 @@
 3. jdk 17
 4. Mysql 5.7
 5. MyBatis
-6. JSP
+
