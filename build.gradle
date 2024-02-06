@@ -18,7 +18,18 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     runtimeOnly 'com.mysql:mysql-connector-j'
+    implementation group: 'org.apache.tomcat.embed', name: 'tomcat-embed-jasper', version: '11.0.0-M16'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    //lombook
+    implementation 'org.projectlombok:lombok:1.18.22'
+    annotationProcessor 'org.projectlombok:lombok:1.18.22'
+
+    //mybatis
+    implementation group: 'org.mybatis.spring.boot', name: 'mybatis-spring-boot-starter', version: '3.0.3'
+
+
+
 }
 
 tasks.named('test') {
