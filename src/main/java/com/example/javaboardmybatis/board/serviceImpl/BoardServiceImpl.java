@@ -1,16 +1,14 @@
 package com.example.javaboardmybatis.board.serviceImpl;
 
 import com.example.javaboardmybatis.board.dto.BoardDTO;
-import com.example.javaboardmybatis.board.mapper.BoardMapper;
+import com.example.javaboardmybatis.mapper.board.BoardMapper;
 import com.example.javaboardmybatis.board.service.BoardService;
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-@MapperScan("com.example.javaboardmybatis.board.mapper")
 public class BoardServiceImpl implements BoardService {
     @Autowired
     private BoardMapper boardMapper;

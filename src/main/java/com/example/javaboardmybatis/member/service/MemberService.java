@@ -1,7 +1,7 @@
 package com.example.javaboardmybatis.member.service;
 
-import com.example.javaboardmybatis.member.dto.Member;
-import com.example.javaboardmybatis.member.mapper.MemberMapper;
+import com.example.javaboardmybatis.member.dto.MemberDTO;
+import com.example.javaboardmybatis.mapper.member.MemberMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,7 +10,7 @@ public class MemberService {
     @Autowired
     private MemberMapper memberMapper;
 
-    public void saveMember(Member member) {
+    public void saveMember(MemberDTO member) {
         memberMapper.saveMember(member);
     }
 }

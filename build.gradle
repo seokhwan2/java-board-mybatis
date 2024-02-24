@@ -28,6 +28,8 @@ dependencies {
     //mybatis
     implementation group: 'org.mybatis.spring.boot', name: 'mybatis-spring-boot-starter', version: '3.0.3'
 
+    //validation
+    implementation 'javax.validation:validation-api:2.0.1.Final'
 
 
 }

@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.mapper.MemberMapper">
-
-    <resultMap id="memberResultMap" type="com.example.model.Member">
+<mapper namespace="com.example.javaboardmybatis.mapper.member.MemberMapper">
+    <resultMap id="memberResultMap" type="com.example.javaboardmybatis.member.dto.MemberDTO">
         <id property="id" column="id" />
         <result property="username" column="username" />
         <result property="password" column="password" />

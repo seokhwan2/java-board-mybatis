@@ -1,4 +1,4 @@
-package com.example.javaboardmybatis.board.mapper;
+package com.example.javaboardmybatis.mapper.board;
 
 import com.example.javaboardmybatis.board.dto.BoardDTO;
 import org.apache.ibatis.annotations.Mapper;
