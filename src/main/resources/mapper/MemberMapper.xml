@@ -5,11 +5,22 @@
         <id property="id" column="id" />
         <result property="username" column="username" />
         <result property="password" column="password" />
+        <result property="email" column="email" />
     </resultMap>
 
     <insert id="saveMember" useGeneratedKeys="true" keyProperty="id">
-        INSERT INTO members (username, password)
-        VALUES (#{username}, #{password})
+        INSERT INTO members (username, password, email)
+        VALUES (#{username}, #{password}, #{email})
     </insert>
+
+        <!-- 아이디 중복체크-->
+    <select id="countByUsername" resultType="int">
+        SELECT COUNT(*) FROM members WHERE username = #{username}
+    </select>
+
+        <!-- 이메일 중복 체크 쿼리 -->
+    <select id="countByEmail" resultType="int" parameterType="String">
+        SELECT COUNT(*) FROM members WHERE email = #{email}
+    </select>
 
 </mapper>

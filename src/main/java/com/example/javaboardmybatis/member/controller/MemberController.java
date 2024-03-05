@@ -14,18 +14,28 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping("api/members")
+@RequestMapping("/api/members")
 public class MemberController {
     @Autowired
     private MemberService memberService;
 
     @PostMapping("/signup")
     public ResponseEntity<String> signUp(@Valid @RequestBody MemberDTO memberDto, BindingResult result) {
+
         if (result.hasErrors()) {
             // 유효성 검사 오류가 있을 경우 처리
             StringBuilder errors = new StringBuilder();
             result.getAllErrors().forEach(error -> errors.append(error.getDefaultMessage()).append("\n"));
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errors.toString());
+        }
+
+        // 중복 체크
+        if (!memberService.isUsernameUnique(memberDto.getUsername())) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("이미 사용 중인 아이디입니다.");
+        }
+
+        if (!memberService.isEmailUnique(memberDto.getEmail())) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("이미 사용 중인 이메일입니다.");
         }
 
         // 유효성 검사 통과 시 회원 가입 로직 수행

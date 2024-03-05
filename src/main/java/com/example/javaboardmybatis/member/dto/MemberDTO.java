@@ -13,4 +13,7 @@ public class MemberDTO {
     @NotNull(message = "비밀번호는 필수 입력 항목입니다")
     private String password;
 
+    @NotNull(message = "이메일을 정확히 입력해주세요")
+    private String email;
+
 }

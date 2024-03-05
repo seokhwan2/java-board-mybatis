@@ -13,4 +13,14 @@ public class MemberService {
     public void saveMember(MemberDTO member) {
         memberMapper.saveMember(member);
     }
+
+    public boolean isUsernameUnique(String username) {
+        int count = memberMapper.countByUsername(username);
+        return count == 0;
+    }
+
+    public boolean isEmailUnique(String email) {
+        int count = memberMapper.countByEmail(email);
+        return count == 0;
+    }
 }
